@@ -1,7 +1,9 @@
 package com.cybertek.stepdefinations;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
 
 public class Hooks {
 
@@ -30,6 +32,16 @@ public class Hooks {
     public void tearDownDatabaseConnection() {
         System.out.println();
         System.out.println("DB Connection Closed");
-        ;
+
+    }
+
+    @BeforeStep
+    public void setUpStep() {
+        System.out.println("=========Before Step : Taking Screenshot=========");
+    }
+
+    @AfterStep
+    public void tearDownStep() {
+        System.out.println("============After Step : Taking Screenshot============");
     }
 }
